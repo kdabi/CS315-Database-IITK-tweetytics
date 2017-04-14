@@ -6,7 +6,7 @@ from .models import Tweet, User, RetweetedStatus
 
 class TweetAdmin(admin.ModelAdmin):
     model = Tweet
-    list_display = ('language', 'id_str', 'source', 'truncated', 'coordinates', 'timestamo_ms', 'tweet_id', 'in_reply_to_status_id', 'in_reply_to_screen_name', 'in_reply_to_user_id', 'place')
+    list_display = ('language', 'id_str', 'source', 'text', 'created_at','truncated', 'coordinates', 'timestamo_ms', 'tweet_id', 'in_reply_to_status_id', 'in_reply_to_screen_name', 'in_reply_to_user_id', 'place')
 
 class UserAdmin(admin.ModelAdmin):
     model = User
@@ -14,7 +14,7 @@ class UserAdmin(admin.ModelAdmin):
 
 class RetweetedStatusAdmin(admin.ModelAdmin):
     model = RetweetedStatus
-    list_display = ('text','favourite_count', 'source', 'id_str', 'retweeted', 'truncated', 'is_quote_status', 'in_reply_to_status_id', 'in_reply_to_screen_name', 'in_reply_to_user_id', 'retweet_count', 'favourited', 'language', 'coordinates', 'user')
+    list_display = ('text','favourite_count', 'source', 'id_str', 'retweeted', 'truncated', 'is_quote_status', 'in_reply_to_status_id', 'in_reply_to_screen_name', 'in_reply_to_user_id', 'retweet_count', 'favourited', 'language', 'coordinates', 'created_at', 'user')
 
 admin.site.register(Tweet, TweetAdmin)
 admin.site.register(User, UserAdmin)
