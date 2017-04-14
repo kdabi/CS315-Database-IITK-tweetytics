@@ -204,3 +204,13 @@ def load_data(filename):
 
 def location_view(request):
     pass
+
+def index(request):
+    return render(request,'home.html')
+
+
+def apphome(request):
+    return render(request,'apphome.html')
+
+def contact(request):
+    return render(request,'contact.html')

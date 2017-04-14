@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+ This project has been created as a part of course CS315A : Principles of Database Systems, IIT Kanpur
+{% endblock %}
+
+ {% load static %}
+{% block content %}
+<h3> For further details contact the following :</h3>
+
+               <div class="contacti">
+               <a target="_blank" href="">
+             <img src="{% static "user1.png" %}" alt="Kritagya" width="700" height="300">
+  </a>
+  <div class="contactd">Kritagya Dabi
+<br>14326<br>Department : CSE<br>
+kdabi@iitk.ac.in</div>
+</div>
+
+  <div class="contacti">
+               <a target="_blank" href="">
+             <img src="{% static "sittu.png" %}" alt="Kshiitiz" width="700" height="300">
+  </a>
+  <div class="contactd">Kshiitiz Singhal
+<br>14330<br>Department : CSE<br>
+kshiitiz@iitk.ac.in</div>
+</div>
+  <div class="contacti">
+               <a target="_blank" href="">
+             <img src="{% static "user1.png" %}" alt="Sanjay" width="700" height="300">
+  </a>
+  <div class="contactd">Sanjay Ramesh
+<br>14601<br>Department : CSE<br>
+sanjayr@iitk.ac.in</div>
+</div>
+{% endblock %}
