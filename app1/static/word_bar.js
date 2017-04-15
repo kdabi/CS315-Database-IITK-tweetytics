@@ -4,7 +4,7 @@ google.charts.load('current', {'packages':['corechart']});
 function drawBarChart() {
   var options = {
     title : "Word Popularity Comparison",
-    width : 600,
+    width : 795,
     height: 400,
     bar: {groupWidth: "95%"},
     legend: {position: "none"}
@@ -25,11 +25,6 @@ function drawBarChart() {
     }
   });
   return false;
-}
-
-function partytime(){
-	console.log("Party");
-	return false;
 }
 
 var form_bt = document.getElementById('button_form');

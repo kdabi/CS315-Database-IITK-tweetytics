@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^Word\ compare$',views.compare_view, name='wordpop'),
     url(r'^location$', views.location_view, name='location_url'),
     url(r'^Language\ Compare$', views.langpop, name='langpop'),
+    url(r'^World\ Map$', views.worldmap, name='worldmap'),
 ]

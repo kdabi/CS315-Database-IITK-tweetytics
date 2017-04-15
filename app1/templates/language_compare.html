@@ -38,30 +38,32 @@ div {
 </style>
 {% block content %}
 <body>
-
-<h3>Enter the languages in the below form :- </h3>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<h3>Enter the language codes in the below form (<a href="https://www.w3schools.com/tags/ref_language_codes.asp" target="_blank">ISO 639-1 Language Codes</a>) :- </h3>
 
 <div>
-    <form action="{% url 'langpop' %}" method="POST">
+    <form id='lang_form' method="POST">
 
         {% csrf_token %}
-    <label for="lang1">Language - 1</label>
+    <label for="lang1">Lang - 1</label>
     <input type="text" id="lang1" name="lang1" placeholder="1st lang..">
 
-    <label for="lang2">Language - 2</label>
+    <label for="lang2">Lang - 2</label>
     <input type="text" id="lang2" name="lang2" placeholder="2nd lang..">
 
-    <label for="lang3">Language - 3</label>
+    <label for="lang3">Lang - 3</label>
     <input type="text" id="lang3" name="lang3" placeholder="3rd lang..">
 
-    <label for="lang4">Language - 4</label>
+    <label for="lang4">Lang - 4</label>
     <input type="text" id="lang4" name="lang4" placeholder="4th lang..">
 
-    <label for="lang5">Language - 5</label>
+    <label for="lang5">Lang - 5</label>
     <input type="text" id="lang5" name="lang5" placeholder="5th lang..">
   
-    <input type="submit" value="Submit">
+    <input id="button_form" type="button" value="Submit">
   </form>
+  <div id="bar_div"></div>
 </div>
+<script type="text/javascript" src="../static/lang_bar.js"></script>
 
 {% endblock %}

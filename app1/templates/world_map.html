@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static  %}
+{% block title %}
+<h3>Tweet User Distribution (Log Scale)</h3>
+{% endblock %}
+
+
+{% block content %}
+  <body>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../static/geochart.js"></script>
+   <div id="regions_div" ></div>
+  </body>
+{% endblock %}

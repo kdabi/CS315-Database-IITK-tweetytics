@@ -541,6 +541,9 @@ def langpop(request):
 def wordpop(request):
     return render(request,'word_compare.html')
 
+def worldmap(request):
+    return render(request,'world_map.html')
+
 def compare_view(request):
     if request.method=='POST':
         word = []

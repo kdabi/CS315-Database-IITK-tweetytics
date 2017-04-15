@@ -7,8 +7,14 @@
 
 {% block content %}
   <body>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="../static/geochart.js"></script>
-   <div id="regions_div" ></div>
+	<h4>App Description</h4>
+	<p> In our application we have performed analysis over Twitter data feed. Our database has over 145,000 tweets. The DBMS in use in MySQL. The database consists of 2 tables- Tweets and Users linked to each other. In ur application we provide 3 forms of analysis:</p>
+<ol type="1">
+  <li>Tweet User distribution across the world map presented in the form of heat map</li>
+  <li>A word popularity comparison model that allows users to compare the popularity of different words based on their frequency in tweets in the form of a bar chart</li>
+  <li>A language popularity comparison model that allows users to compare the popularity of languages given the ISO code for the language based on the tweets' languages in the form of a bar chart</li>
+</ol>
+<p> We have our backend is in Python(Django) and our front-end is a mix of HTML, CSS and Javasript. We make use of the Google-Chart APIs to present our data.</p>
+<p> Hope you enjoy it!! Have FUN...</p>
   </body>
 {% endblock %}

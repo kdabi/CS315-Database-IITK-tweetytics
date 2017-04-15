@@ -43,9 +43,8 @@ div {
 <h3>Enter the words in the below form :- </h3>
 
 <div>
-<div id="try">
   <form id='word_form' method="POST">
-    <form action="{% url 'wordpop' %}" method="POST">
+   <form action="{% url 'wordpop' %}" method="POST">
       {% csrf_token %}
     <label for="word1">Word - 1</label>
     <input type="text" id="word1" name="word1" placeholder="1st word..">
@@ -67,6 +66,6 @@ div {
   <div id="bar_div" ></div>
 </div>
 
-<script type="text/javascript" src="../static/histo.js"></script>
+<script type="text/javascript" src="../static/word_bar.js"></script>
 
 {% endblock %}
