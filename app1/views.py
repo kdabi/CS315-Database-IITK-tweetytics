@@ -8,6 +8,8 @@ from django.db import transaction
 import ast
 from django.http import JsonResponse
 import math
+from django.db.models import Q
+#from django.core.context_processors import csrf
 
 def load_data(filename):
     with open(filename) as data_file:
@@ -486,3 +488,24 @@ def langpop(request):
 
 def wordpop(request):
     return render(request,'word_compare.html')
+
+def compare_view(request):
+    if request.method=='POST':
+        word = []
+        word.append(request.POST["word1"])
+        word.append(request.POST["word2"])
+        word.append(request.POST["word3"])
+        word.append(request.POST["word4"])
+        word.append(request.POST["word5"])
+
+        count = {}
+
+        for w in word:
+            if w:
+                count[w] = len(Tweet.objects.filter(Q(text__contains=w)))
+
+        return JsonResponse(count)
+    else:
+        c = {}
+        #c.update(csrf(request))
+        return render(request,'word_compare.html', c)

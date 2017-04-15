@@ -42,7 +42,8 @@ div {
 <h3>Enter the words in the below form :- </h3>
 
 <div>
-  <form action="">
+  <form action="/app1/word_compare" method="POST">
+      {% csrf_token %}
     <label for="word1">Word - 1</label>
     <input type="text" id="word1" name="word1" placeholder="1st word..">
 
