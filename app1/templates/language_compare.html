@@ -42,7 +42,9 @@ div {
 <h3>Enter the languages in the below form :- </h3>
 
 <div>
-  <form action="">
+    <form action="{% url 'langpop' %}" method="POST">
+
+        {% csrf_token %}
     <label for="lang1">Language - 1</label>
     <input type="text" id="lang1" name="lang1" placeholder="1st lang..">
 

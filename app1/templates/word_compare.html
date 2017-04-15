@@ -45,6 +45,7 @@ div {
 <div>
 <div id="try">
   <form id='word_form' method="POST">
+    <form action="{% url 'wordpop' %}" method="POST">
       {% csrf_token %}
     <label for="word1">Word - 1</label>
     <input type="text" id="word1" name="word1" placeholder="1st word..">
