@@ -478,3 +478,13 @@ def apphome(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+def compare(request):
+    if request.method=='POST':
+        word_count = request.POST["word_count"]
+        word1 = request.POST["word1"]
+        word2 = request.POST["word2"]
+        word2 = request.POST["word2"]
+        word2 = request.POST["word2"]
+        word2 = request.POST["word2"]
+
