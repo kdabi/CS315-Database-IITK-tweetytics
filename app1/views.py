@@ -483,7 +483,60 @@ def contact(request):
     return render(request,'contact.html')
 
 def langpop(request):
-    return render(request,'language_compare.html')
+    if request.method=="POST":
+        lang_codes = {
+            "English":"en",
+            "Arabic":"ar",
+            "Bengali":"bn",
+            "Czech":"cs",
+            "Danish":"da",
+            "German":"de",
+            "Greek":"el",
+            "Spanish":"es",
+            "Persian":"fa",
+            "Finnish":"fi",
+            "Filipino":"fil",
+            "French":"fr",
+            "Hebrew":"he",
+            "Hindi":"hi",
+            "Hungarian":"hu",
+            "Indonesian":"id",
+            "Italian":"it",
+            "Japanese":"ja",
+            "Korean":"ko",
+            "Malay":"msa",
+            "Dutch":"nl",
+            "Norwegian":"no",
+            "Polish":"pl",
+            "Portuguese":"pt",
+            "Romanian":"ro",
+            "Russian":"ru",
+            "Swedish":"sv",
+            "Thai":"th",
+            "Turkish":"tr",
+            "Ukrainian":"uk",
+            "Urdu":"ur",
+            "Vietnamese":"vi",
+            "Chinese (Simplified)":"zh-cn",
+            "Chinese (Traditional)":"zh-tw",
+        }
+
+        lang = []
+        lang.append(request.POST["lang1"])
+        lang.append(request.POST["lang2"])
+        lang.append(request.POST["lang3"])
+        lang.append(request.POST["lang4"])
+        lang.append(request.POST["lang5"])
+
+        count = {}
+
+        for l in lang:
+            if l and l in lang_codes.values():
+                count[l] = len(Tweet.objects.filter(language=l))
+
+        return JsonResponse(count)
+    else:
+        return render(request,'language_compare.html')
 
 def wordpop(request):
     return render(request,'word_compare.html')
