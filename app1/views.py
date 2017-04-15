@@ -502,7 +502,7 @@ def compare_view(request):
 
         for w in word:
             if w:
-                count[w] = len(Tweet.objects.filter(Q(text__contains=w)))
+                count[w] = len(Tweet.objects.filter(Q(text__icontains=w)))
 
         return JsonResponse(count)
     else:
