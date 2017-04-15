@@ -476,7 +476,6 @@ def location_view(request):
 def index(request):
     return render(request,'home.html')
 
-
 def apphome(request):
     return render(request,'apphome.html')
 
