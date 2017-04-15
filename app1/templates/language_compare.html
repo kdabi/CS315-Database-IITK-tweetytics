@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h3>Let's Compare number of tweets in respective languages</h3>
+{% endblock %}
+
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+{% block content %}
+<body>
+
+<h3>Enter the languages in the below form :- </h3>
+
+<div>
+  <form action="">
+    <label for="lang1">Language - 1</label>
+    <input type="text" id="lang1" name="lang1" placeholder="1st lang..">
+
+    <label for="lang2">Language - 2</label>
+    <input type="text" id="lang2" name="lang2" placeholder="2nd lang..">
+
+    <label for="lang3">Language - 3</label>
+    <input type="text" id="lang3" name="lang3" placeholder="3rd lang..">
+
+    <label for="lang4">Language - 4</label>
+    <input type="text" id="lang4" name="lang4" placeholder="4th lang..">
+
+    <label for="lang5">Language - 5</label>
+    <input type="text" id="lang5" name="lang5" placeholder="5th lang..">
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}

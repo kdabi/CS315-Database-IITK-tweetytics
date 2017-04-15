@@ -202,7 +202,7 @@ def load_data(filename):
                 print "created" + str(count)
                 count+=1
             except Exception as e:
-                print e
+                print e[1]
                 uncount+=1
                 print "Unable to commit////////" + str(uncount)
             minibatch_tweet = []
@@ -463,7 +463,7 @@ def location_view(request):
     country_count = {}
     places = Tweet.objects.values('place')
     for location in places:
-        if location['place'] is not None:
+        if location['place'] is not None and location['place'] != "null":
             place = location['place']
             place = ast.literal_eval(place)
             country_count[place['country_code']] = country_count.get(place['country_code'], 0) + 1
@@ -481,6 +481,12 @@ def apphome(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+def langpop(request):
+    return render(request,'language_compare.html')
+
+def wordpop(request):
+    return render(request,'word_compare.html')
 
 def compare_view(request):
     if request.method=='POST':
