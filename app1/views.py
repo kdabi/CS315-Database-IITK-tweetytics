@@ -46,6 +46,7 @@ def load_data(filename):
         'profile_images_url_https',
         'profile_sidebar_fill_color',
         'id',
+        'lang',
         'followers_count',
         'profile_text_color',
         'protected',
@@ -133,7 +134,7 @@ def load_data(filename):
                 in_reply_to_status_id = str(post['in_reply_to_status_id']),
                 in_reply_to_user_id = str(post['in_reply_to_user_id']),
                 language = post['lang'],
-                place = post['place'],
+                place = json.dumps(post['place']),
                 #possibly_sensitive = post['possibly_sensitive'],
                 #quoted_status_id = post['quoted_status_id'],
                 #quoted_status = post['quoted_status'],
@@ -159,6 +160,7 @@ def load_data(filename):
                 profile_images_url_https = user1['profile_images_url_https'],
                 profile_sidebar_fill_color = user1['profile_sidebar_fill_color'],
                 user_id = user1['id'],
+                language = user1['lang'],
                 followers_count = user1['followers_count'],
                 profile_text_color = user1['profile_text_color'],
                 protected = user1['protected'],
@@ -214,3 +216,6 @@ def apphome(request):
 
 def contact(request):
     return render(request,'contact.html')
+
+def wordpop(request):
+    return render(request,'word_compare.html')

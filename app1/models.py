@@ -45,6 +45,7 @@ class User(models.Model):
     friends_count = models.BigIntegerField(null=True)
     profile_image_url = models.URLField(default='None',null=True)
     profile_link_color = models.CharField(max_length=6,null=True)
+    language = models.CharField(max_length=20,null=True)
     favourites_count = models.BigIntegerField(null=True)
     name = models.CharField(max_length=50,null=True,default=None)
     screen_name = models.CharField(max_length=50,null=True)
