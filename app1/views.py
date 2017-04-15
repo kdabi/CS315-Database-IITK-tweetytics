@@ -8,6 +8,8 @@ from django.db import transaction
 import ast
 from django.http import JsonResponse
 import math
+from django.db.models import Q
+#from django.core.context_processors import csrf
 
 def load_data(filename):
     with open(filename) as data_file:
@@ -48,6 +50,7 @@ def load_data(filename):
         'profile_images_url_https',
         'profile_sidebar_fill_color',
         'id',
+        'lang',
         'followers_count',
         'profile_text_color',
         'protected',
@@ -135,7 +138,7 @@ def load_data(filename):
                 in_reply_to_status_id = str(post['in_reply_to_status_id']),
                 in_reply_to_user_id = str(post['in_reply_to_user_id']),
                 language = post['lang'],
-                place = post['place'],
+                place = json.dumps(post['place']),
                 #possibly_sensitive = post['possibly_sensitive'],
                 #quoted_status_id = post['quoted_status_id'],
                 #quoted_status = post['quoted_status'],
@@ -161,6 +164,7 @@ def load_data(filename):
                 profile_images_url_https = user1['profile_images_url_https'],
                 profile_sidebar_fill_color = user1['profile_sidebar_fill_color'],
                 user_id = user1['id'],
+                language = user1['lang'],
                 followers_count = user1['followers_count'],
                 profile_text_color = user1['profile_text_color'],
                 protected = user1['protected'],
@@ -479,12 +483,23 @@ def apphome(request):
 def contact(request):
     return render(request,'contact.html')
 
-def compare(request):
+def compare_view(request):
     if request.method=='POST':
-        word_count = request.POST["word_count"]
-        word1 = request.POST["word1"]
-        word2 = request.POST["word2"]
-        word2 = request.POST["word2"]
-        word2 = request.POST["word2"]
-        word2 = request.POST["word2"]
+        word = []
+        word.append(request.POST["word1"])
+        word.append(request.POST["word2"])
+        word.append(request.POST["word3"])
+        word.append(request.POST["word4"])
+        word.append(request.POST["word5"])
 
+        count = {}
+
+        for w in word:
+            if w:
+                count[w] = len(Tweet.objects.filter(Q(text__contains=w)))
+
+        return JsonResponse(count)
+    else:
+        c = {}
+        #c.update(csrf(request))
+        return render(request,'word_compare.html', c)

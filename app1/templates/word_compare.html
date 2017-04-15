@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h3>Let's Compare the popularity of words on Twitter</h3>
+{% endblock %}
+
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+{% block content %}
+<body>
+
+<h3>Enter the words in the below form :- </h3>
+
+<div>
+  <form action="/app1/word_compare" method="POST">
+      {% csrf_token %}
+    <label for="word1">Word - 1</label>
+    <input type="text" id="word1" name="word1" placeholder="1st word..">
+
+    <label for="word2">Word - 2</label>
+    <input type="text" id="word2" name="word2" placeholder="2nd word..">
+
+    <label for="word3">Word - 3</label>
+    <input type="text" id="word3" name="word3" placeholder="3rd word..">
+
+    <label for="word4">Word - 4</label>
+    <input type="text" id="word4" name="word4" placeholder="4th word..">
+
+    <label for="word5">Word - 5</label>
+    <input type="text" id="word5" name="word5" placeholder="5th word..">
+
+    <label for="number">Number of words you want to compare </label>
+    <select id="number" name="number">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}

@@ -10,7 +10,7 @@ class TweetAdmin(admin.ModelAdmin):
 
 class UserAdmin(admin.ModelAdmin):
     model = User
-    list_display = ('follow_request_sent', 'geo_enabled', 'verified', 'is_translator', 'profile_use_background_image', 'profile_images_url_https', 'profile_sidebar_fill_color', 'user_id', 'followers_count', 'profile_text_color', 'protected', 'location', 'statuses_count', 'description', 'notifications', 'profile_background_image_url_https', 'profile_background_image_url', 'profile_background_color', 'profile_banner_url', 'friends_count', 'profile_image_url', 'profile_link_color', 'favourites_count', 'name', 'screen_name', 'url', 'listed_count', 'tweet')
+    list_display = ('follow_request_sent', 'language', 'geo_enabled', 'verified', 'is_translator', 'profile_use_background_image', 'profile_images_url_https', 'profile_sidebar_fill_color', 'user_id', 'followers_count', 'profile_text_color', 'protected', 'location', 'statuses_count', 'description', 'notifications', 'profile_background_image_url_https', 'profile_background_image_url', 'profile_background_color', 'profile_banner_url', 'friends_count', 'profile_image_url', 'profile_link_color', 'favourites_count', 'name', 'screen_name', 'url', 'listed_count', 'tweet')
 
 # class RetweetedStatusAdmin(admin.ModelAdmin):
 #     model = RetweetedStatus
