@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^home$',views.apphome, name='apphome'),
     url(r'^contact$',views.contact, name='contact'),
+    url(r'^location$', views.location_view, name='location_url'),
 ]
